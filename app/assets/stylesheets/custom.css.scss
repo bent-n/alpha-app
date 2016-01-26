@@ -4,7 +4,9 @@ $navbar-default-link-color: #1EFF38;
 @import "bootstrap";
 
 
-
+body{
+  background-color: #7423b2
+}
 
 .nav .navbar-nav ul li a{
     color: red;
@@ -25,6 +27,7 @@ $navbar-default-link-color: #1EFF38;
 
 .center {
   text-align: center;
+  border: none;
 }
 
 .jumbotron{
@@ -73,6 +76,14 @@ $navbar-default-link-color: #1EFF38;
   border-color: red;
   &:hover{
     background-color: #000;
+  }
+}
+
+.link{
+  color: #1EFF38;
+  &:hover
+  {
+    color: #117e20;
   }
 }
 
