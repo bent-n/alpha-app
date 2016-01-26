@@ -35,6 +35,7 @@ body{
    background-size: cover;
    height: 550px;
    background-position: center;
+   border: none;
   h1{
     color: #fff;
     margin-bottom: 30px;
@@ -74,6 +75,7 @@ body{
 {
   background-color: red;
   border-color: red;
+  float: right;
   &:hover{
     background-color: #000;
   }
