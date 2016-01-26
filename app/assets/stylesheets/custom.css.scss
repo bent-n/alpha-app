@@ -1,3 +1,9 @@
+$light-green: #1EFF38;
+$light-blue: #00e1d9;
+$light-purple: #ac00ca;
+$purple: #7423b2;
+$red: #b22c23;
+
 $navbar-default-bg: #ac00ca;
 $navbar-default-link-color: #1EFF38;
 @import "bootstrap-sprockets";
@@ -22,6 +28,7 @@ body{
   letter-spacing: -1px;
   font-weight: bold;
   padding-top: 7px;
+  padding-left: 7px;
 
 }
 
@@ -30,7 +37,8 @@ body{
   border: none;
 }
 
-.jumbotron{
+.home-jumbotron{
+  @extend .jumbotron;
    background-image: asset-url('logome.png');
    background-size: cover;
    height: 550px;
@@ -73,12 +81,34 @@ body{
 
 .btn-cancel
 {
-  background-color: red;
-  border-color: red;
+  background-color: $light-purple;
+  border-color: $light-purple;
   float: right;
   &:hover{
-    background-color: #000;
+    background-color: $light-purple;
+    border-color: black;
+    color: black;
   }
+  &:active{
+    background-color: $light-purple;
+    border-color: black;
+    color: black;
+    &:focus
+    {
+      background-color: $light-purple;
+    border-color: black;
+    color: black;
+    }
+  }
+  &:focus
+  {
+    background-color: $light-purple;
+    border-color: black;
+    color: black;
+  }
+}
+.btn-delete{
+  @extend .btn-cancel;
 }
 
 .link{
@@ -89,3 +119,64 @@ body{
   }
 }
 
+.article-jumbotron
+{
+  @extend .jumbotron;
+
+}
+
+
+.btn-confirm{
+  background-color:$light-green;
+  border-color: $light-green;
+  &:hover
+  {
+    background-color: $light-green;
+    border-color: black;
+    color: black;
+  }
+}
+
+h4{
+  margin-top: 0;
+}
+
+.article-actions {
+  border-top: 1px solid $light-blue;
+  padding-top: 5px;
+}
+
+.well{
+  background-color: $purple;
+  border-color: $light-purple;
+  border-width: 0 5px 0 5px;
+  border-radius: 0;
+  -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
+  -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
+  -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
+  box-shadow: 0 5px 15px rgba(0,0,0,0);
+
+}
+
+.title{
+  border-bottom: 1px solid $light-blue;
+  font-weight: bold;
+}
+
+.article-title{
+ @extend .title;
+ font-size: 1.5em;
+
+}
+.article-body{
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+hr {
+  border-top: 5px solid $light-blue;
+}
+
+* {
+color: $light-blue;
+}

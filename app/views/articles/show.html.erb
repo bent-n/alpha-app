@@ -1,6 +1,11 @@
-<h1> Showing selected article </h1>
+<h2 align="center", class="title col-xs-8 col-xs-offset-2"><%= @article.title %></h2>
+<div class= "well col-xs-8 col-xs-offset-2">
+  <div align="center">
+    <%= simple_format(@article.description) %>
+  </div>
+  <div class="article-actions">
+    <%= link_to 'Edit', edit_article_path(@article),class: "btn btn-sm btn-primary btn-confirm" %>
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+  </div>
+</div>
 
-<p>Title: <%= @article.title %></p>
-<p>Description: <%= @article.description %></p>
-<%= link_to 'Edit', edit_article_path(@article) %>|
-<%= link_to 'Article Index', articles_path %>
