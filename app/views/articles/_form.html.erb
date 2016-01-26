@@ -11,18 +11,32 @@
 
 <% end %>
 
-<%= form_for @article do |a| %>
-<p>
-  <%= a.label :title %><br/>
-  <%= a.text_field :title %>
-</p>
-<p>
-  <%= a.label :description %> <br/>
-  <%= a.text_area :description %>
-</p>
-<p>
-  <%= a.submit %>
-</p>
 
-  <% end %>
-    <%= link_to 'Article Index', articles_path %>
+<div class = 'row'>
+  <div class = 'col-xs-12'>
+    <%= form_for(@article, :html => {class: "form-horizontal", role: "form"})  do |a| %>
+    <div class= 'form-group'>
+      <div class="control-label col-sm-2">
+       <%= a.label :title %>
+      </div>
+      <div class="col-sm-8">
+      <%= a.text_field :title, class: "form-control", placeholder: "Title of Article", autofocus: true%>
+      </div>
+    </div>
+    <div class= 'form-group'>
+      <div class="control-label col-sm-2">
+      <%= a.label :description %>
+      </div>
+      <div class="col-sm-8">
+      <%= a.text_area :description, rows:10, class: 'form-control', placeholder: "Description" %>
+      </div>
+    </div>
+    <div class= 'form-group'>
+      <div class="col-sm-offset-2 col-sm-8">
+      <%= a.submit class: 'btn btn-primary btn-lg'%>
+       <%= link_to "Cancel", articles_path, class: 'btn btn-primary btn-lg btn-cancel' %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>

@@ -67,4 +67,12 @@ $navbar-default-link-color: #1EFF38;
   }
  }
 
+.btn-cancel
+{
+  background-color: red;
+  border-color: red;
+  &:hover{
+    background-color: #000;
+  }
+}
 
