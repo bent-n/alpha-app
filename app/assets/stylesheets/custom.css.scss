@@ -14,10 +14,13 @@ body{
   background-color: #7423b2
 }
 
-.nav .navbar-nav ul li a{
-    color: red;
+.navbar-right{
+  margin-right: 0;
 }
 
+.nav .navbar-nav .navbar-right{
+  margin-right: 0;
+}
 
 #logo {
   //float: left;
@@ -50,10 +53,39 @@ body{
     letter-spacing: -1px;
     font-weight: bold;
   }
-  .btn-xlarge{
-  background-color: #000;
+  .btn-login{
+    background-color: $light-purple;
+    border-color: $light-purple;
+    &:hover
+    {
+      color: black;
+      border-color: black;
 
-
+    }
+    &:active
+    {
+      &:focus
+      {
+        background-color: $light-green;
+      }
+    }
+    
+  }
+  .btn-signup{
+  background-color: $red;
+  border-color: $red;
+  &:hover
+  {
+    color: black;
+    border-color: black;
+  }
+  &:active
+    {
+      &:focus
+      {
+        background-color: $light-green;
+      }
+    }
   }
   
  }
@@ -135,6 +167,24 @@ body{
     border-color: black;
     color: black;
   }
+  &:active
+  {
+    background-color: $light-green;
+    border-color: black;
+    color: black;
+    &:focus
+    {
+    background-color: $light-green;
+    border-color: black;
+    color: black;
+    }
+  }
+   &:focus
+    {
+    background-color: $light-green;
+    border-color: black;
+    color: black;
+    }
 }
 
 h4{
@@ -177,6 +227,16 @@ hr {
   border-top: 5px solid $light-blue;
 }
 
+.icon-bar
+{
+  color:$light-green;
+}
+
 * {
 color: $light-blue;
+}
+
+html, body {
+  width: auto !important;
+  overflow-x: hidden !important;
 }
