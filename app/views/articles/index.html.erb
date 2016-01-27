@@ -8,6 +8,14 @@
         <div class="article-title">
           <%= link_to "#{a.title}", article_path(a), class: 'link'  %>
         </div>
+        <div class="article-meta-details">
+          <small>
+            <%if a.user%>
+              By: <%= link_to "#{a.user.username}", article_path(a), class: 'link'  %>
+            <% end%>
+            <%= time_ago_in_words(a.created_at) %> ago, Updated: <%= time_ago_in_words(a.updated_at) %> ago
+          </small> 
+        </div>
         <div class="article-body">
           <%= truncate(a.description, length: 100) %>
         </div>
