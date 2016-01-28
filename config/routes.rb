@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'welcome/home' => 'welcome#home'
   get '/about' => 'welcome#about'
   get 'signup' => 'users#new'
+  
   resources :articles 
   resources :users, except: [:new]
   # The priority is based upon order of creation: first created -> highest priority.

@@ -161,6 +161,7 @@ body{
 .btn-confirm{
   background-color:$light-green;
   border-color: $light-green;
+  float: left;
   &:hover
   {
     background-color: $light-green;
@@ -201,6 +202,7 @@ h4{
   border-color: $light-purple;
   border-width: 0 5px 0 5px;
   border-radius: 0;
+  padding-top: 14px;
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
   -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
   -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
@@ -235,6 +237,10 @@ hr {
 .article-meta-details
 {
   border-bottom: 1px dashed $light-blue
+}
+
+.img-circle {
+  border: 3px solid $light-green;
 }
 
 * {
