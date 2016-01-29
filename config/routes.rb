@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get 'welcome/home' => 'welcome#home'
   get '/about' => 'welcome#about'
   get 'signup' => 'users#new'
+
+  get '/users/:id/post_index', to: 'users#post_index', as: 'post_index'
   
   resources :articles 
   resources :users, except: [:new]

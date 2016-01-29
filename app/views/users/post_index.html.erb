@@ -1,0 +1,27 @@
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<div class="article-body post_index">
+
+<% @user_articles.each do |a| %>
+
+  <p align="center"><%= link_to "#{a.title}", article_path(a), class: 'link', :target => "_parent"%>
+    <%= link_to 'Edit', edit_article_path(a),class: "btn btn-xs btn-primary btn-confirm", :target => "_parent"%>
+    <%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-xs btn-primary btn-delete', :target => "_parent"  %>
+  </p>
+<% end %>
+<% url=request.original_url 
+a=url.split('')
+page_num=a[-1].to_i
+if (page_num > 1 && @user.articles.count > 5)
+  h = ((page_num*5) - @user.articles.count )
+  h = (h*40)+20
+else
+  h = 0
+end
+sty = "margin-top:" + h.to_s
+sty= sty + "px"
+if h>0 
+%>
+<hr class="hr-xs-transp" style=<%= sty %>> 
+<% end %>
+  <div class="post-index" align="center"><%= will_paginate @user_articles %></div>
+</div>

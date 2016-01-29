@@ -202,7 +202,7 @@ h4{
   border-color: $light-purple;
   border-width: 0 5px 0 5px;
   border-radius: 0;
-  padding-top: 14px;
+  padding-top: 5px;
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0);
   -moz-box-shadow: 0 5px 15px rgba(0,0,0,0);
   -o-box-shadow: 0 5px 15px rgba(0,0,0,0);
@@ -221,13 +221,26 @@ h4{
 
 }
 .article-body{
-  padding-top: 24px;
-  padding-bottom: 24px;
+
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 hr {
   border-top: 5px solid $light-blue;
 }
+
+.hr-xs
+{
+  border-top: 1px solid $light-blue;
+  margin-bottom: 0;
+}
+.hr-xs-transp
+{
+  border-top: 1px solid transparent;
+  margin-bottom: 0;
+}
+
 
 .icon-bar
 {
@@ -236,11 +249,58 @@ hr {
 
 .article-meta-details
 {
-  border-bottom: 1px dashed $light-blue
+  border-bottom: 1px dashed $light-blue;
+  & > small{
+    margin-bottom: 5px;
+  }
+
 }
 
 .img-circle {
   border: 3px solid $light-green;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus{
+  background-color: #820099;
+  border-color: #00B215;
+  color: #00B215;
+
+}
+
+.pagination{
+& > li > a, & > li > span 
+  {
+
+   border-color: $light-green;
+   background-color: $light-purple;
+   color: $light-green;
+
+  &:hover{
+    border-color: black;
+    background-color: $light-purple;
+    color: black; 
+    }
+  }
+
+}
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus{
+
+     border-color: $light-blue;
+   background-color: $light-blue;
+   color: $light-purple;
+}
+
+.post_index{
+  & > p{
+    margin-bottom: 20px;
+  }
+  .pagination{
+    margin-top: 10px;
+    margin-bottom: 0;
+    //top:229;
+  }
 }
 
 * {

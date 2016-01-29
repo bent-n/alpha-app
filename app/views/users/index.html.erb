@@ -1,0 +1,54 @@
+<h1 align="center">Users</h1>
+
+<hr>
+  <div align="center"><%= will_paginate %></div>
+ <% @users.each do |u| %>
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+      <div class="well well-lg">
+        <div align='center' class="article-title">
+          <%= link_to "#{u.username}", user_path(u), class: 'link'  %>
+          <%= link_to 'Edit', edit_user_path(u),class: "btn btn-sm btn-primary btn-confirm" %>
+          <%= link_to 'Delete', user_path(u), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+        </div>
+        <div class="article-meta-details">
+          <small>
+            Joined: <%= time_ago_in_words(u.created_at) %> ago
+          </small> 
+        </div>
+          <div class="center">
+  <%= link_to gravatar_for(u), user_path(u), class: 'center' %>
+  </div>
+        <% if u.articles.count > 0 %>
+          <% u.articles.count<5 ? h = u.articles.count * 60 : h = 300 %>
+        <div class="article-body">
+        <small><%= pluralize(u.articles.count, "Post") %>:</small>
+        
+     
+        <div class="row">
+        <iframe class="col-xs-12  " height= <%= h %>px frameBorder="0" src= <%= post_index_path(u) %>></iframe>
+        </div>
+ 
+        
+
+<!--
+        <% u.articles.each do |a| %> 
+
+        </br>
+
+          <p align="center"><%= link_to "#{a.title}", article_path(a), class: 'link'%>
+             <%= link_to 'Edit', edit_article_path(a),class: "btn btn-sm btn-primary btn-confirm" %>
+          <%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+          </p>
+        <% end %> -->
+        </div>
+        <% end %>
+        <div class="article-actions">
+
+        </div>
+      </div>
+      <hr>
+    </div>
+  </div>
+<% end %>
+  <div align="center"><%= will_paginate %></div>

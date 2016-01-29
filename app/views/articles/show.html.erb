@@ -1,6 +1,17 @@
 <h2 align="center", class="title col-xs-8 col-xs-offset-2"><%= @article.title %></h2>
 <div class= "well col-xs-8 col-xs-offset-2">
-  <div align="center">
+ <div class="article-meta-details center">
+          
+            <%if @article.user%>
+              
+                <%= link_to gravatar_for(@article.user, size: 80), user_path(@article.user), class: 'center' %> </br>
+               <%= link_to "#{@article.user.username}", user_path(@article.user), class: 'link'  %> </br>
+            <% end%>
+            <small>
+            <%= time_ago_in_words(@article.created_at) %> ago, Updated: <%= time_ago_in_words(@article.updated_at) %> ago
+          </small> 
+        </div>
+  <div align="center" class="article-body">
     <%= simple_format(@article.description) %>
   </div>
   <div class="article-actions">
