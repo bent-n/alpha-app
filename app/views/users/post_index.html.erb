@@ -1,4 +1,5 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <body style="padding-top: 0">
 <div class="article-body post_index">
 
 <% @user_articles.each do |a| %>
@@ -28,3 +29,4 @@ if h>0
 <% end %>
   <div class="post-index" align="center"><%= will_paginate @user_articles %></div>
 </div>
+</body>

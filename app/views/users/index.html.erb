@@ -10,7 +10,9 @@
           <%= link_to "#{u.username}", user_path(u), class: 'link'  %>
           <% if logged_in? && (current_user == u || current_user.admin?)%>
             <%= link_to 'Edit', edit_user_path(u),class: "btn btn-sm btn-primary btn-confirm" %>
-            <%= link_to 'Delete', user_path(u), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+            <% if current_user.admin? %>
+              <%= link_to 'Delete', user_path(u), method: :delete, data: {confirm: 'Delete User Permanently?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+            <% end %>
           <% end %>
         </div>
         <div class="article-meta-details">
@@ -22,7 +24,7 @@
   <%= link_to gravatar_for(u), user_path(u), class: 'center' %>
   </div>
         <% if u.articles.count > 0 %>
-          <% u.articles.count<5 ? h = u.articles.count * 60 : h = 300 %>
+          <% u.articles.count<5 ? h = (u.articles.count * 60) : h = 275 %>
         <div class="article-body">
         <small><%= pluralize(u.articles.count, "Post") %>:</small>
         
