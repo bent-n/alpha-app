@@ -4,8 +4,11 @@
 <% @user_articles.each do |a| %>
 
   <p align="center"><%= link_to "#{a.title}", article_path(a), class: 'link', :target => "_parent"%>
+    
+  <% if logged_in? && current_user == a.user %>
     <%= link_to 'Edit', edit_article_path(a),class: "btn btn-xs btn-primary btn-confirm", :target => "_parent"%>
     <%= link_to 'Delete', article_path(a.id), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-xs btn-primary btn-delete', :target => "_parent"  %>
+  <% end %>
   </p>
 <% end %>
 <% url=request.original_url 

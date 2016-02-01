@@ -8,8 +8,10 @@
       <div class="well well-lg">
         <div align='center' class="article-title">
           <%= link_to "#{u.username}", user_path(u), class: 'link'  %>
-          <%= link_to 'Edit', edit_user_path(u),class: "btn btn-sm btn-primary btn-confirm" %>
-          <%= link_to 'Delete', user_path(u), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+          <% if logged_in? && current_user == u %>
+            <%= link_to 'Edit', edit_user_path(u),class: "btn btn-sm btn-primary btn-confirm" %>
+            <%= link_to 'Delete', user_path(u), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+          <% end %>
         </div>
         <div class="article-meta-details">
           <small>

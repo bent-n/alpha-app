@@ -17,10 +17,12 @@
         <div class="article-body">
           <%= truncate(a.description, length: 100) %>
         </div>
-        <div class="article-actions">
-          <%= link_to 'Edit', edit_article_path(a),class: "btn btn-sm btn-primary btn-confirm" %>
-          <%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
-        </div>
+        <% if logged_in? && current_user== a.user %>
+          <div class="article-actions">
+            <%= link_to 'Edit', edit_article_path(a),class: "btn btn-sm btn-primary btn-confirm" %>
+            <%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+          </div>
+        <%end%>
       </div>
       <hr>
     </div>

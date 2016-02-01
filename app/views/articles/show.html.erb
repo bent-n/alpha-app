@@ -15,8 +15,10 @@
     <%= simple_format(@article.description) %>
   </div>
   <div class="article-actions">
+  <% if logged_in? && current_user == @article.user %>
     <%= link_to 'Edit', edit_article_path(@article),class: "btn btn-sm btn-primary btn-confirm" %>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
+  <% end %>
   </div>
 </div>
 
