@@ -5,7 +5,7 @@
 
   <p align="center"><%= link_to "#{a.title}", article_path(a), class: 'link', :target => "_parent"%>
     
-  <% if logged_in? && current_user == a.user %>
+  <% if logged_in? && (current_user == a.user || current_user.admin?) %>
     <%= link_to 'Edit', edit_article_path(a),class: "btn btn-xs btn-primary btn-confirm", :target => "_parent"%>
     <%= link_to 'Delete', article_path(a.id), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-xs btn-primary btn-delete', :target => "_parent"  %>
   <% end %>

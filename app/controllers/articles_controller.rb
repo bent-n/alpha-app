@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @article.user
+      if current_user != @article.user && !current_user.admin?
         flash[:danger] = "You do not have permission to access this page"
         redirect_to root_path
       end

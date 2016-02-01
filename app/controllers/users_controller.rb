@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   
   before_action :set_user, only: [:edit, :update, :show, :post_index]
-  before_action :require_user, except: [:new, :index, :show, :post_index]
+  before_action :require_user, only: [:edit, :update, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
 
   def new
@@ -16,7 +16,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Signup Successful"
-      redirect_to root_path
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
     else
       render 'new'
     end
@@ -51,7 +52,7 @@ end
       @user= User.find(params[:id])
     end
     def require_same_user
-      if current_user != @user
+      if current_user != @user && !current_user.admin?
         flash[:danger] = "You do not have permission to access this page"
         redirect_to root_path
       end

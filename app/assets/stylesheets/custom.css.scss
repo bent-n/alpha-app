@@ -11,9 +11,13 @@ $navbar-default-link-color: #1EFF38;
 
 
 body{
-  background-color: #7423b2
+  background-color: #7423b2;
+  padding-top: 50px; 
 }
 
+.navbar{
+
+}
 .navbar-right{
   margin-right: 0;
 }
@@ -302,6 +306,22 @@ hr {
     //top:229;
   }
 }
+.alert{
+&.alert-danger{
+  color: black;
+  background-color: #EEAEAA;
+  border-color: $red;
+  border-width: 3px;
+}
+&.alert-success{
+  background-color: #99FFA5;
+  border-color: $light-green;
+  border-width: 3px;
+}
+
+
+}
+
 
 * {
 color: $light-blue;
