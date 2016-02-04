@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+will_paginate:
+    previous_label: <span class="col-md-2"></span>
+    next_label: <span class="btn-cancel"></span>

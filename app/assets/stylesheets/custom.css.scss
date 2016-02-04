@@ -12,7 +12,7 @@ $navbar-default-link-color: #1EFF38;
 
 body{
   background-color: #7423b2;
-  padding-top: 50px; 
+  padding-top: 55px; 
 }
 
 .navbar{
@@ -223,6 +223,10 @@ h4{
  @extend .title;
  font-size: 1.5em;
 
+& > ul{
+  list-style: none;
+ }
+
 }
 .article-body{
 
@@ -307,19 +311,21 @@ hr {
   }
 }
 .alert{
-&.alert-danger{
+  &.alert-danger{
   color: black;
   background-color: #EEAEAA;
   border-color: $red;
   border-width: 3px;
-}
-&.alert-success{
+  }
+  &.alert-success{
   background-color: #99FFA5;
   border-color: $light-green;
   border-width: 3px;
+  }
 }
-
-
+.listing{
+  list-style: none;
+  padding-left: 0;
 }
 
 

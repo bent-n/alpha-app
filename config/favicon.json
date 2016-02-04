@@ -1,0 +1,39 @@
+{
+    "master_picture": "app/assets/images/bp_big.png",
+    "favicon_design": {
+        "ios": {
+            "picture_aspect": "background_and_margin",
+            "background_color": "#ac00ca",
+            "margin": "0%"
+        },
+        "desktop_browser": [
+
+        ],
+        "windows": {
+            "picture_aspect": "no_change",
+            "background_color": "#da532c",
+            "on_conflict": "override"
+        },
+        "android_chrome": {
+            "picture_aspect": "background_and_margin",
+            "margin": "0%",
+            "background_color": "#ac00ca",
+            "theme_color": "#ac00ca",
+            "manifest": {
+                "name": "Beep",
+                "display": "browser",
+                "orientation": "not_set",
+                "on_conflict": "override",
+                "declared": true
+            }
+        },
+        "safari_pinned_tab": {
+            "picture_aspect": "silhouette",
+            "theme_color": "#5bbad5"
+        }
+    },
+    "settings": {
+        "scaling_algorithm": "Mitchell",
+        "error_on_image_too_small": false
+    }
+}
