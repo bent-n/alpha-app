@@ -17,6 +17,14 @@
         <div class="article-body">
           <%= truncate(a.description, length: 100) %>
         </div>
+        <% if a.categories.any? %>
+    <div class="small categories">
+    Categories: 
+    <% a.categories.each do |c| %>
+    <%= render 'categories/category', obj: c %>
+    <% end %>
+    </div>
+  <% end %>
         <% if logged_in? && (current_user== a.user || current_user.admin?)%>
           <div class="article-actions">
             <%= link_to 'Edit', edit_article_path(a),class: "btn btn-sm btn-primary btn-confirm" %>

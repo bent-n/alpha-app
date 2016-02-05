@@ -1,5 +1,5 @@
+<hr>
 <h1 align="center">Users</h1>
-
 <hr>
   <div align="center"><%= will_paginate %></div>
  <% @users.each do |u| %>
@@ -28,25 +28,12 @@
         <% if u.articles.count > 0 %>
           <% u.articles.count<5 ? h = (u.articles.count * 60) : h = 275 %>
         <div class="article-body">
-        <small><%= pluralize(u.articles.count, "Post") %>:</small>
+        <small ><%= pluralize(u.articles.count, "Post") %>:</small>
         
      
         <div class="row">
         <iframe class="col-xs-12  " height= <%= h %>px frameBorder="0" src= <%= post_index_path(u) %>></iframe>
         </div>
- 
-        
-
-<!--
-        <% u.articles.each do |a| %> 
-
-        </br>
-
-          <p align="center"><%= link_to "#{a.title}", article_path(a), class: 'link'%>
-             <%= link_to 'Edit', edit_article_path(a),class: "btn btn-sm btn-primary btn-confirm" %>
-          <%= link_to 'Delete', article_path(a), method: :delete, data: {confirm: 'Really?'}, class: 'btn btn-sm btn-primary btn-delete'  %>
-          </p>
-        <% end %> -->
         </div>
         <% end %>
         <div class="article-actions">

@@ -14,6 +14,14 @@
   <div align="center" class="article-body">
     <%= simple_format(@article.description) %>
   </div>
+  <% if @article.categories.any? %>
+    <div class="small categories">
+    Categories:  
+    <% @article.categories.each do |c| %>
+    <%= render 'categories/category', obj: c %>
+    <% end %>
+    </div>
+  <% end %>
   <div class="article-actions">
   <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
     <%= link_to 'Edit', edit_article_path(@article),class: "btn btn-sm btn-primary btn-confirm" %>

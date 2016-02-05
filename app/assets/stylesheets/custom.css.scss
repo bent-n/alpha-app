@@ -328,6 +328,42 @@ hr {
   padding-left: 0;
 }
 
+.nav, .navbar-nav{
+  li{
+    &:active{
+      background-color: $light-blue;
+    }
+    &:focus{
+      background-color: $light-blue;
+    }
+    &:hover{
+      color: $light-blue;
+      background-color: $light-blue;
+    }
+    &.dropdown.open > .dropdown-toggle{
+      background-color: $light-blue;
+    }
+
+  }
+}
+.categories{
+  font-style: italic;
+  border-top: 1px dashed $light-blue;
+  &.badge{
+  &.link{
+    &:hover{
+      text-decoration: none;
+    }
+  }
+}
+
+}
+.badge{
+  background-color: $light-blue;
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+
 
 * {
 color: $light-blue;
